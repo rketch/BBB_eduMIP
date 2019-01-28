@@ -2,6 +2,23 @@ clear all
 close all
 clc
 
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+% .
+% .  MAE 144 Final Project: eduMIP Balancing Robot Matlab Code
+% .
+% .
+% .  Author:  Robert Ketchum                  
+% .  Revised: 1/28/2018
+% .
+% .  Please note: This code uses functions to sort out transfer function
+% .  polynomials. These functions may be found on page S-1 and S-2 here:
+% .  http://numerical-renaissance.com/NR.pdf
+% .  All credit for these functions goes to Prof. Bewley at UCSD. I would
+% .  like to thank Prof. Bewley and Jeffrey Friesen for their guidance on
+% .  this project.
+% . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %PART 1: Characterizing the robot's equations of motion and finding G1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,13 +137,13 @@ figure(1)
 subplot(2,1,1)
 axis([-50 20 -2 2])
 rlocus(G1);
-title("RL of G1")
+title("Root Locus of G1")
 grid on
 hold on
 subplot(2,1,2)
 rlocus(G1D1/-k1);
 grid on
-title("RL of open loop")
+title("Root Locus of G1*D1")
 axis([-100 20 -100 100])
 
 figure(2)
@@ -138,16 +155,16 @@ figure(3)
 step(T1);
 grid on
 axis([0 2 0 3])
-title("Step Response of closed loop system")
+title("Step Response of Inner Loop")
 
 figure(4)
 bode(G1D1)
 grid on
-title("Bode of open loop system")
+title("Bode of G1*D1")
 
 figure(5)
 bode(D1)
-title("Bode of Controller")
+title("Bode of D1")
 grid on
 
 %Plots for Outer Loop
@@ -191,4 +208,11 @@ figure(11)
 step(T2f)
 axis([0 20 -1 2])
 grid on
-title("Step Response of Full System")
+title("Step Response of Both Loops")
+
+%saveas(1,"Inner_Loop_RL.png")
+%saveas(3,"Inner_Loop_Step.png")
+%saveas(4,"Inner_Loop_Bode.png")
+%saveas(6,"Outer_Loop_RL.png")
+%saveas(9,"Outer_Loop_Bode.png")
+%saveas(11,"Outer_Loop_Step.png")
