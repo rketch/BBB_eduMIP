@@ -1,4 +1,4 @@
-/** File  Name: eduMIP_Controller_Implementation.c
+/** File  Name: eduMIP_Controller_Implementation_V1.c
  *
  * Author: Robert Ketchum (skeleton of file from Robot Control Library at strawsondesign.com)
  *
@@ -8,10 +8,10 @@
  * BeagleBone Blue with two controllers, which were created in Matlab.
  *
  * To compile:
- * gcc -Wall final2.c -o final2 -lm -lrt -l:librobotcontrol.so.1
+ * gcc -Wall eduMIP_Controller_Implementation_V1.c -o eduMIP_Controller_Implementation_V1 -lm -lrt -l:librobotcontrol.so.1
  *
  * To run:
- * sudo ./final2
+ * sudo ./eduMIP_Controller_Implementation_V1
  *
  *
  */
