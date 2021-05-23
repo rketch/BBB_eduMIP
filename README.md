@@ -8,7 +8,4 @@ For more information, please see:
 
 [-A report detailing the derivation of the equations of motion of the eduMIP, the design of two Lead-Lag Compensators using MATLAB, and their implementation in C-Programming Language.](./eduMIP.pdf)
 
-
-
-
 ![photo](./edumip.jpg)
