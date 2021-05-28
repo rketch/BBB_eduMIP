@@ -57,7 +57,7 @@ const double outer_num[3] = {0.09966, 0.004863, -0.0948};
 
 //Constant declarations
 const double PI            = 3.1415926;
-const double WC            = 4;        //complimentary filter cutoff fz [rad/sec]
+const double WC            = 157.9;    //complimentary filter cutoff fz [rad/sec]
 const double K1            = 0.3;      //inner loop scaling factor
 const double K2            = 0.1;      //outer loop scaling factor
 const double REV           = 341.8648; //encoder value for 1 wheel revolution [ticks/rev]
@@ -205,8 +205,8 @@ void imu_interupt_function(void){
     gyro_angle[0] = gyro_angle[1] + INNER_LOOP_DT * raw_gyro;                              //find angle using euler's integration method
 
     //complementary filter--high pass gyro data, low pass accelerometer data
-    double HIGH_PASS = 1 / (2 * PI * INNER_LOOP_DT * WC + 1);                              //generic high pass filter
-    double LOW_PASS  = (2 * PI * INNER_LOOP_DT * WC) * HIGH_PASS;                          //generic low pass filter
+    double HIGH_PASS = 1 / (INNER_LOOP_DT * WC / 2 / PI + 1);                              //generic high pass filter
+    double LOW_PASS  = (INNER_LOOP_DT * WC / 2 / PI) * HIGH_PASS;                          //generic low pass filter
     filtered_acc  = LOW_PASS * raw_accel + (1 - LOW_PASS) * filtered_acc;                  //filter accel data
     filtered_gyro = HIGH_PASS * filtered_gyro + HIGH_PASS*(gyro_angle[0] - gyro_angle[1]); //filter gyro data
     current_angle = filtered_gyro + filtered_acc;                                          //add filtered angles together
