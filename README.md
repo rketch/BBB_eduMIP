@@ -6,4 +6,4 @@ MATLAB and C-code for creating and implementing a controller into a BeagleBoneBl
 [![balancing gif](./images/balancing.gif)](https://www.youtube.com/watch?v=53ShETFpYco)
 
 ## Report on the design process
-[![Report title page](./images/report_title_page.jpg)](./eduMIP.pdf)
+[![Report title page](./images/report_title_page.jpg)](./eduMIP_report.pdf)
