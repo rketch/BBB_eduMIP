@@ -6,4 +6,4 @@ MATLAB and C-code for creating and implementing a controller into an inverting p
 [![balancing gif](./images/balancing.gif)](https://www.youtube.com/watch?v=53ShETFpYco)
 
 ## Report on the design process
-[![Report title page](./images/report_title_page.jpg)](./eduMIP_report.pdf)
+[![Report title page](./images/report_title_page.jpg)](https://drive.google.com/file/d/1eoSKhXbQDSWEg0V5BIO5BcQvESzRrtVn/view?usp=sharing)
